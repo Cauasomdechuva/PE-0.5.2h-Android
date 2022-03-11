@@ -1032,7 +1032,14 @@ class PlayState extends MusicBeatState
 		add(iconP2);
 		reloadHealthBarColors();
 
-		var creditTxt:FlxText = new FlxText(4,healthBarBG.y + 20,0,"Port by Kaua"), 24);
+		scoreTxt = new FlxText(0, healthBarBG.y + 36, FlxG.width, "", 20);
+		scoreTxt.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		scoreTxt.scrollFactor.set();
+		scoreTxt.borderSize = 1.25;
+		scoreTxt.visible = !ClientPrefs.hideHud;
+		add(scoreTxt);
+		
+		var creditTxt:FlxText = new FlxText(4,healthBarBG.y + 20,0,"Port by Enzo"), 24);
         creditTxt.scrollFactor.set();
         creditTxt.setFormat("VCR OSD Mono", 24, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
         creditTxt.borderColor = FlxColor.BLACK;
